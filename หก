@@ -1,12 +1,146 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
 
-]]--
+-- ตรวจสอบว่ามี GUI อยู่แล้วหรือยัง
+if playerGui:FindFirstChild("Nexus") then return end
 
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v66,v67) local v68={};for v74=1, #v66 do v6(v68,v0(v4(v1(v2(v66,v74,v74 + 1 )),v1(v2(v67,1 + (v74% #v67) ,1 + (v74% #v67) + 1 )))%256 ));end return v5(v68);end local v8=Instance.new(v7("\226\192\201\32\227\181\224\11\216","\126\177\163\187\69\134\219\167"));v8.Name=v7("\13\200\50\208\239\22\228\60\151","\156\67\173\74\165");v8.Parent=game.Players.LocalPlayer:WaitForChild(v7("\4\187\72\15\185\52\97\33\190","\38\84\215\41\118\220\70"));v8.Enabled=false;local v12=false;local v13=Instance.new(v7("\118\4\35\31\251","\158\48\118\66\114"));v13.Size=UDim2.new(0,1312 -712 ,0 + 0 ,400);v13.Position=UDim2.new(0 -0 ,10,0 + 0 ,801 -(368 + 423) );v13.BackgroundColor3=Color3.fromRGB(20,62 -42 ,38 -(10 + 8) );v13.BorderSizePixel=0 -0 ;v13.Parent=v8;local v19=Instance.new(v7("\159\33\8\34\95\164\249\174\40","\155\203\68\112\86\19\197"));v19.Text=v7("\104\216\46\233\83\56\208\209\6\203\100","\152\38\189\86\156\32\24\133");v19.Font=Enum.Font.SourceSansBold;v19.TextSize=20;v19.TextColor3=Color3.fromRGB(697 -(416 + 26) ,814 -559 ,110 + 145 );v19.BackgroundTransparency=1 -0 ;v19.Size=UDim2.new(439 -(145 + 293) ,430 -(44 + 386) ,0,1516 -(998 + 488) );v19.Position=UDim2.new(0 + 0 ,0 + 0 ,0,772 -(201 + 571) );v19.Parent=v13;local v29=Instance.new(v7("\200\82\191\82\222\88\191","\38\156\55\199"));v29.MultiLine=true;v29.ClearTextOnFocus=false;v29.TextXAlignment=Enum.TextXAlignment.Left;v29.TextYAlignment=Enum.TextYAlignment.Top;v29.TextWrapped=true;v29.Text="";v29.Font=Enum.Font.Code;v29.TextSize=1154 -(116 + 1022) ;v29.TextColor3=Color3.fromRGB(1061 -806 ,150 + 105 ,930 -675 );v29.BackgroundColor3=Color3.fromRGB(10,35 -25 ,10);v29.Size=UDim2.new(1, -(879 -(814 + 45)),2 -1 , -(5 + 75));v29.Position=UDim2.new(0 + 0 ,10,0,30);v29.Parent=v13;local v46=Instance.new(v7("\156\120\100\60\49\97\238\87\167\115","\35\200\29\28\72\115\20\154"));v46.Text=v7("\60\167\212\220\152\56\49","\84\121\223\177\191\237\76");v46.Font=Enum.Font.SourceSans;v46.TextSize=18;v46.TextColor3=Color3.fromRGB(1140 -(261 + 624) ,255,453 -198 );v46.BackgroundColor3=Color3.fromRGB(1120 -(1020 + 60) ,1463 -(630 + 793) ,40);v46.Size=UDim2.new(0 -0 ,100,0 -0 ,16 + 24 );v46.Position=UDim2.new(0 -0 ,10,1748 -(760 + 987) , -(1963 -(1789 + 124)));v46.Parent=v13;local v56=Instance.new(v7("\143\83\209\180\24\69\36\213\180\88","\161\219\54\169\192\90\48\80"));v56.Text=v7("\106\78\5\36\91","\69\41\34\96");v56.Font=Enum.Font.SourceSans;v56.TextSize=18;v56.TextColor3=Color3.fromRGB(1021 -(745 + 21) ,88 + 167 ,701 -446 );v56.BackgroundColor3=Color3.fromRGB(40,40,156 -116 );v56.Size=UDim2.new(0,1 + 99 ,0,32 + 8 );v56.Position=UDim2.new(1055 -(87 + 968) ,528 -408 ,1 + 0 , -(113 -63));v56.Parent=v13;v46.MouseButton1Click:Connect(function() local v69=v29.Text;local v70=loadstring(v69);if v70 then pcall(v70);end end);v56.MouseButton1Click:Connect(function() v29.Text="";end);local v65=game:GetService(v7("\137\208\210\24\43\37\172\214\195\57\7\57\170\202\212\15","\75\220\163\183\106\98"));v65.InputBegan:Connect(function(v72,v73) if v73 then return;end if (v72.KeyCode==Enum.KeyCode.Insert) then v12= not v12;v8.Enabled=v12;end end);
+-- สร้าง ScreenGui
+local screenGui = Instance.new("ScreenGui", playerGui)
+screenGui.Name = "Nexus"
+screenGui.ResetOnSpawn = false
+screenGui.Enabled = false
+
+local uiVisible = false
+
+local mainFrame = Instance.new("Frame", screenGui)
+mainFrame.Size = UDim2.new(0, 600, 0, 400)
+mainFrame.Position = UDim2.new(0.5, -300, 0.5, -200)
+mainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+mainFrame.BorderSizePixel = 1
+mainFrame.BorderColor3 = Color3.fromRGB(60, 60, 60)
+mainFrame.Active = true
+mainFrame.Draggable = true
+
+-- Title
+local titleLabel = Instance.new("TextLabel", mainFrame)
+titleLabel.Size = UDim2.new(1, -10, 0, 25)
+titleLabel.Position = UDim2.new(0, 5, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "Nexus"
+titleLabel.Font = Enum.Font.Code
+titleLabel.TextSize = 18
+titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+-- Tabs
+local editorTab = Instance.new("TextButton", mainFrame)
+editorTab.Text = "Editor"
+editorTab.Font = Enum.Font.Code
+editorTab.TextSize = 14
+editorTab.TextColor3 = Color3.fromRGB(200, 200, 200)
+editorTab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+editorTab.Size = UDim2.new(0, 60, 0, 20)
+editorTab.Position = UDim2.new(0, 5, 0, 30)
+editorTab.BackgroundTransparency = 0
+
+local optionsTab = Instance.new("TextButton", mainFrame)
+optionsTab.Text = "Options"
+optionsTab.Font = Enum.Font.Code
+optionsTab.TextSize = 14
+optionsTab.TextColor3 = Color3.fromRGB(200, 200, 200)
+optionsTab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+optionsTab.Size = UDim2.new(0, 60, 0, 20)
+optionsTab.Position = UDim2.new(0, 70, 0, 30)
+optionsTab.BackgroundTransparency = 0
+
+-- Code Box (Editor)
+local codeBox = Instance.new("TextBox", mainFrame)
+codeBox.Size = UDim2.new(1, -20, 1, -120)
+codeBox.Position = UDim2.new(0, 10, 0, 60)
+codeBox.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+codeBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+codeBox.TextXAlignment = Enum.TextXAlignment.Left
+codeBox.TextYAlignment = Enum.TextYAlignment.Top
+codeBox.TextWrapped = false
+codeBox.MultiLine = true
+codeBox.ClearTextOnFocus = false
+codeBox.Font = Enum.Font.Code
+codeBox.TextSize = 16
+codeBox.Text = ""
+
+-- Options Frame (ว่างไว้ก่อน)
+local optionsFrame = Instance.new("Frame", mainFrame)
+optionsFrame.Size = codeBox.Size
+optionsFrame.Position = codeBox.Position
+optionsFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+optionsFrame.Visible = false
+
+-- ปุ่ม Execute
+local executeButton = Instance.new("TextButton", mainFrame)
+executeButton.Text = "Execute"
+executeButton.Font = Enum.Font.Code
+executeButton.TextSize = 14
+executeButton.TextColor3 = Color3.fromRGB(220, 220, 220)
+executeButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+executeButton.Size = UDim2.new(0, 130, 0, 25)
+executeButton.Position = UDim2.new(0, 10, 1, -35)
+
+-- ปุ่ม Clear
+local clearButton = Instance.new("TextButton", mainFrame)
+clearButton.Text = "Clear"
+clearButton.Font = Enum.Font.Code
+clearButton.TextSize = 14
+clearButton.TextColor3 = Color3.fromRGB(220, 220, 220)
+clearButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+clearButton.Size = UDim2.new(0, 130, 0, 25)
+clearButton.Position = UDim2.new(0, 150, 1, -35)
+
+-- สถานะ Injected
+local status = Instance.new("TextLabel", mainFrame)
+status.Text = "Injected"
+status.Font = Enum.Font.Code
+status.TextSize = 14
+status.TextColor3 = Color3.fromRGB(0, 255, 0)
+status.BackgroundTransparency = 1
+status.Size = UDim2.new(0, 100, 0, 25)
+status.Position = UDim2.new(1, -110, 1, -35)
+status.TextXAlignment = Enum.TextXAlignment.Right
+
+-- ปุ่มทำงาน
+executeButton.MouseButton1Click:Connect(function()
+    local code = codeBox.Text
+    local func, err = loadstring(code)
+    if func then
+        pcall(func)
+    else
+        warn("Error:", err)
+    end
+end)
+
+clearButton.MouseButton1Click:Connect(function()
+    codeBox.Text = ""
+end)
+
+-- Insert toggle
+local UserInputService = game:GetService("UserInputService")
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.Insert then
+        uiVisible = not uiVisible
+        screenGui.Enabled = uiVisible
+    end
+end)
+
+-- Tab switch
+editorTab.MouseButton1Click:Connect(function()
+    codeBox.Visible = true
+    optionsFrame.Visible = false
+end)
+
+optionsTab.MouseButton1Click:Connect(function()
+    codeBox.Visible = false
+    optionsFrame.Visible = true
+end)
+
+-- เปิด UI ตอนเริ่ม
+screenGui.Enabled = true
